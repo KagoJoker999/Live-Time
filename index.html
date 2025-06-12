@@ -20,17 +20,24 @@
         }
         .container {
             background-color: #ffffff; /* White background */
-            border-radius: 1rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* Subtle shadow */
-            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Subtle shadow */
+            padding: 1.5rem; /* Default padding for small screens */
             max-width: 850px;
             width: 100%;
+        }
+
+        @media (min-width: 768px) { /* Corresponds to md breakpoint */
+            .container {
+                padding: 2.5rem;
+            }
         }
         h1 {
             color: #202124; /* Google's primary dark text */
         }
         p {
             color: #5f6368; /* Google's secondary text */
+            line-height: 1.5;
         }
 
         /* Dimension cards and questions */
@@ -39,22 +46,25 @@
             padding: 2rem;
             margin-bottom: 2rem;
             background-color: #ffffff; /* White background for cards */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.16); /* Lighter shadow for cards */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.07); /* Lighter shadow for cards */
         }
         .dimension-card h3 {
             color: #3c4043; /* Slightly lighter heading */
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         .question-group {
-            margin-bottom: 1.25rem;
-            padding-left: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .question-group p {
+            margin-bottom: 0.5rem;
         }
         .radio-option {
             display: flex;
             align-items: center;
-            margin-top: 0.6rem;
+            margin-top: 0.5rem;
             color: #3c4043;
+            line-height: 1.5;
         }
         .radio-option input[type="radio"] {
             margin-right: 0.6rem;
@@ -70,7 +80,7 @@
             gap: 0.5rem;
             margin-bottom: 1.5rem;
             padding: 1rem;
-            background-color: #f0f4f8; /* Very light blue/gray for contrast */
+            background-color: #F5F5F5; /* Very light blue/gray for contrast */
             border-radius: 0.5rem;
             border: 1px solid #dadce0; /* Light gray border */
             box-shadow: none;
@@ -80,6 +90,7 @@
             color: #3c4043;
             white-space: nowrap;
             margin-bottom: 0.25rem;
+            line-height: 1.4;
         }
         .weight-slider-container {
             display: flex;
@@ -143,6 +154,7 @@
             border-top: 1px solid #e8eaed; /* Light border */
             color: #5f6368;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
         .score-display .score-value {
             color: #3c4043;
@@ -151,13 +163,14 @@
         .total-score-display {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-top: 1.25rem;
+            margin-top: 0.5rem;
             color: #1a73e8; /* Google Blue for total scores */
         }
         .suggestion-text {
             font-size: 1.2rem;
             font-weight: 600;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            line-height: 1.5;
             /* Colors dynamically set by JS */
         }
 
@@ -179,37 +192,43 @@
         /* Global total weight info */
         .global-weight-info {
             background-color: #ffffff; /* White background */
-            border-radius: 1rem;
-            padding: 1.5rem;
+            border-radius: 0.75rem;
+            padding: 2rem; /* Changed from 1.5rem to 2rem */
             margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.16);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.07);
             text-align: center;
             border: 1px solid #dadce0; /* Light gray border */
         }
         .global-weight-info h2 {
             color: #202124; /* Primary dark text */
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
         .global-weight-info .total-weight-text {
             font-weight: 600;
             color: #1a73e8; /* Google Blue */
             font-size: 1.05rem;
+            line-height: 1.5;
         }
         .global-weight-info .weight-warning {
             color: #ea4335; /* Google Red for warning */
             font-weight: 600;
             margin-top: 0.75rem;
             font-size: 1rem;
+            line-height: 1.5;
         }
 
         /* Results area styling */
         .results-area {
             background-color: #ffffff; /* White background */
             padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.16);
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.07);
             margin-top: 2.5rem;
             border: 1px solid #dadce0; /* Light gray border */
+        }
+        .results-area .text-lg {
+            line-height: 1.5;
+            margin-bottom: 0.25rem;
         }
         .results-area h2 {
             color: #202124; /* Primary dark text */
@@ -218,10 +237,10 @@
         /* LLM Suggestion Section */
         .llm-suggestion-section {
             background-color: #ffffff; /* White background */
-            border-radius: 1rem;
+            border-radius: 0.75rem;
             padding: 2rem;
             margin-top: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.16);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.07);
             border: 1px solid #dadce0; /* Light gray border */
         }
         .llm-suggestion-section h2 {
@@ -240,6 +259,7 @@
             color: #5f6368;
             font-style: italic;
             margin-top: 1rem;
+            line-height: 1.5;
         }
         .llm-loading-indicator svg {
             animation: spin 1s linear infinite;
@@ -279,8 +299,8 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-3xl font-bold text-center mb-8">抖音直播“择日而播”决策问卷</h1>
-        <p class="text-center mb-10">请根据您对“明天”和“后天”情况的预估进行选择，并可调整各维度权重。</p>
+        <h1 class="text-3xl font-bold text-center mb-6">抖音直播“择日而播”决策问卷</h1>
+        <p class="text-center mb-8">请根据您对“明天”和“后天”情况的预估进行选择，并可调整各维度权重。</p>
 
         <div class="global-weight-info">
             <h2 class="text-2xl font-bold text-center mb-6">维度权重调整</h2>
@@ -332,7 +352,7 @@
         <div id="dimension1" class="dimension-card">
             <h3 class="text-xl font-semibold">1. 营销节点与活动匹配度</h3>
             <div class="question-group">
-                <p class="mb-2">1.1 平台大型S级活动匹配度？</p>
+                <p>1.1 平台大型S级活动匹配度？</p>
                 <label class="radio-option">
                     <input type="radio" name="q1_1" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -344,7 +364,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">1.2 自身营销/上新节奏匹配度？</p>
+                <p>1.2 自身营销/上新节奏匹配度？</p>
                 <label class="radio-option">
                     <input type="radio" name="q1_2" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -356,7 +376,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">1.3 短期热点/事件借势潜力？</p>
+                <p>1.3 短期热点/事件借势潜力？</p>
                 <label class="radio-option">
                     <input type="radio" name="q1_3" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -373,7 +393,7 @@
         <div id="dimension2" class="dimension-card">
             <h3 class="text-xl font-semibold">2. 流量预估与用户在线峰值</h3>
             <div class="question-group">
-                <p class="mb-2">2.1 抖音整体流量大盘趋势预测？</p>
+                <p>2.1 抖音整体流量大盘趋势预测？</p>
                 <label class="radio-option">
                     <input type="radio" name="q2_1" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -385,7 +405,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">2.2 目标用户活跃度预测？</p>
+                <p>2.2 目标用户活跃度预测？</p>
                 <label class="radio-option">
                     <input type="radio" name="q2_2" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -397,7 +417,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">2.3 付费流量投放效率预估？</p>
+                <p>2.3 付费流量投放效率预估？</p>
                 <label class="radio-option">
                     <input type="radio" name="q2_3" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -414,7 +434,7 @@
         <div id="dimension3" class="dimension-card">
             <h3 class="text-xl font-semibold">3. 商品与供应链准备度</h3>
             <div class="question-group">
-                <p class="mb-2">3.1 主推品库存与到货情况？</p>
+                <p>3.1 主推品库存与到货情况？</p>
                 <label class="radio-option">
                     <input type="radio" name="q3_1" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -426,7 +446,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">3.2 供应链发货效率与风险？</p>
+                <p>3.2 供应链发货效率与风险？</p>
                 <label class="radio-option">
                     <input type="radio" name="q3_2" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -438,7 +458,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">3.3 商品品相与价格竞争力？</p>
+                <p>3.3 商品品相与价格竞争力？</p>
                 <label class="radio-option">
                     <input type="radio" name="q3_3" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -455,7 +475,7 @@
         <div id="dimension4" class="dimension-card">
             <h3 class="text-xl font-semibold">4. 主播与团队状态</h3>
             <div class="question-group">
-                <p class="mb-2">4.1 核心主播精力与档期？</p>
+                <p>4.1 核心主播精力与档期？</p>
                 <label class="radio-option">
                     <input type="radio" name="q4_1" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -467,7 +487,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">4.2 团队人员与准备时间？</p>
+                <p>4.2 团队人员与准备时间？</p>
                 <label class="radio-option">
                     <input type="radio" name="q4_2" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -479,7 +499,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">4.3 直播间软硬件状态？</p>
+                <p>4.3 直播间软硬件状态？</p>
                 <label class="radio-option">
                     <input type="radio" name="q4_3" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -496,7 +516,7 @@
         <div id="dimension5" class="dimension-card">
             <h3 class="text-xl font-semibold">5. 竞争对手动态预判</h3>
             <div class="question-group">
-                <p class="mb-2">5.1 主要竞对直播强度与策略？</p>
+                <p>5.1 主要竞对直播强度与策略？</p>
                 <label class="radio-option">
                     <input type="radio" name="q5_1" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -508,7 +528,7 @@
                 </label>
             </div>
             <div class="question-group">
-                <p class="mb-2">5.2 行业整体竞争趋势？</p>
+                <p>5.2 行业整体竞争趋势？</p>
                 <label class="radio-option">
                     <input type="radio" name="q5_2" value="tomorrow" onchange="calculateScores()"> 明天更优
                 </label>
@@ -593,7 +613,7 @@
                 weightId: "weight5",
                 weightValueDisplayId: "weight5Value",
                 scoreDisplayId: "dimension5-score",
-                questionNames: ["q5_1", "q5_2", "q5_3"],
+                questionNames: ["q5_1", "q5_2"],
             },
         ];
 
